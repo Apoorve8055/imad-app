@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Avi', function (req, res) {
-  res.send('hi there');
+  res.send('<h1>hi there</h1>');
 });
 
 app.get('/ui/style.css', function (req, res) {
