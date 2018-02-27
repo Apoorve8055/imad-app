@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Avi', function (req, res) {
-  res.send('<input type="text">  ');
+  res.send('server is working...');
 });
 
 app.get('/ui/style.css', function (req, res) {
