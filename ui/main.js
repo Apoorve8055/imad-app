@@ -10,3 +10,6 @@ pic.onclick = function(){
 //	pic.style.height = "100px";
 var interval = setInterval(moveRight,50);
 };
+con.onclick = function(){
+    alert('press ok ');
+};
