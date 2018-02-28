@@ -1,2 +1,2 @@
 var data = document.getElementById('data');
-data.innerHtml = "hi therr this Avi...";
+data.innerHTML = "hi therr this Avi...";
