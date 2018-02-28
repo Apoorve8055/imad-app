@@ -1,4 +1,3 @@
-console.log('Loaded!');
 var con = document.getElementById('data');
 con.innerHTML = "hi there this is js";
 var pic = document.getElementById('pic');
