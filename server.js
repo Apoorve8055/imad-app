@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get(web, function (req, res) {
-  res.send(web));
+  res.send('server is working...',web);
 });
 
 
