@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/Avi', function (req, res) {
-  res.send('server is working...',path);
+  res.send('server is working...',app);
 });
 
 app.get('/ui/main.js', function (req, res) {
