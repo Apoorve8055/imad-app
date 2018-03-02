@@ -2,8 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-//var Pool = require('pg').pool;
-/*var config = 
+var Pool = require('pg').Pool;
+var config = 
 {
     user:'vapoorve',
     database:'vapoorve',
@@ -26,7 +26,7 @@ app.get('/test-db',function(req,res)
       }
   });
 });
-*/
+
 
 var app = express();
 app.use(morgan('combined'));
