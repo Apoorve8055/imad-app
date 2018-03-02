@@ -11,7 +11,7 @@ var config =
     port:'5432',
     password:process.env.DB_PASSWORD,
 };
-
+/*
 var pool = new Pool(config);
 app.get('/test-db',function(req,res)
 {
@@ -26,7 +26,7 @@ app.get('/test-db',function(req,res)
       }
   });
 });
-
+*/
 
 var app = express();
 app.use(morgan('combined'));
