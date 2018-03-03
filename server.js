@@ -17,7 +17,10 @@ var pool = new Pool(con);
 
 app.get('/test-db',function(req,res)
 {   
-    pool.query('SELECT * FROM test', function (req, res) {res.send("test");});
+    pool.query('SELECT * FROM test', function (req, result) {
+        result.send("test");
+        
+    });
 });
 
 
