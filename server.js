@@ -16,7 +16,15 @@ app.use(morgan('combined'));
 var pool = new Pool(con);
 app.get('/test-db',function(req,res)
 {   pool.query('SELECT * FROM test', function (req, result){
-       res.send("yooooooooooooooo"); 
+       res.send("yooooooooooooooo");
+       if (err) {          
+           res.status(500).send(err,tostring()); 
+           
+       }
+      else {          
+          res.send(JSON,stringify(result)); 
+          
+      }
       
    });
 });
