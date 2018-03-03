@@ -1,8 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+/////////////////////////////////////////////////
 var Pool = require('pg').Pool;
-
 var config = {
     user: 'vapoorve',
     database: 'vapoorve',
@@ -10,8 +10,43 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
-var app = express();
-app.use(morgan('combined'));
+
+
+var articles = {
+    'article-one': {
+      title: 'Article One | Tanmai Gopal',
+      heading: 'Article One',
+      date: 'Sep 5, 2016',
+      content: `
+          <p>
+              This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. 
+          </p>
+          <p>
+              This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. 
+          </p>
+          <p>
+              This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. 
+          </p>`
+    },
+    'article-two': {
+      title: 'Article Two | Tanmai Gopal',
+      heading: 'Article Two',
+      date: 'Sep 10, 2016',
+      content: `
+          <p>
+              This is the content for my second article.
+          </p>`
+    },
+    'article-three': {
+      title: 'Article Three | Tanmai Gopal',
+      heading: 'Article Three',
+      date: 'Sep 15, 2016',
+      content: `
+          <p>
+              This is the content for my third article.
+          </p>`
+    }
+};
 
 function createTemplate (data) {
     var title = data.title;
@@ -38,7 +73,7 @@ function createTemplate (data) {
                   ${heading}
               </h3>
               <div>
-                  ${date.toDateString()}
+                  ${date}
               </div>
               <div>
                 ${content}
@@ -84,8 +119,10 @@ app.get('/submit-name', function(req, res) { // /submit-name?name=xxxx
 });
 
 app.get('/articles/:articleName', function (req, res) {
-  // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
-  pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
+  // articleName == article-one
+  // articles[articleName] == {} content object for article one
+  
+  pool.query("SELECT * FROM article WHERE title = " + req.params.articleName, function (err, result) {
     if (err) {
         res.status(500).send(err.toString());
     } else {
@@ -110,7 +147,6 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-
 var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
