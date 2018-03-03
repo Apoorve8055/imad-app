@@ -11,6 +11,22 @@ var config = {
     password: process.env.DB_PASSWORD
 };
 
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
+var Pool = require('pg').Pool;
+
+var config = {
+    user: 'coco98',
+    database: 'coco98',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
+
+var app = express();
+app.use(morgan('combined'));
+
 
 var articles = {
     'article-one': {
