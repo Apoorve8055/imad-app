@@ -1,9 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool = require('pg-pool');
-var config = 
-{
+var Pool = require('pg').Pool;
+var con ={
     user:'vapoorve',
     database:'vapoorve',
     host:'db.imad.hasura-app.io',
@@ -14,19 +13,14 @@ var config =
 var app = express();
 app.use(morgan('combined'));
 
-var pool = new Pool();
+var pool = new Pool(con);
 app.get('/test-db',function(req,res)
-{
-   pool.query('SELECT * FROM test', function (req, result){
+{   pool.query('SELECT * FROM test', function (req, result){
       // res.send("yooooooooooooooo"); 
       if(err)
-      {
-          res.status(500).send(err,tostring());
-      }
+      {          res.status(500).send(err,tostring()); }
       else
-      {
-          res.send(JSON,stringify(result));
-      }
+      {          res.send(JSON,stringify(result)); }
    });
 });
 
