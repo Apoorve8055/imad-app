@@ -18,6 +18,7 @@ app.get('/test-db',function(req,res)
 {   pool.query('SELECT * FROM test', function (req, result){
        res.send("yooooooooooooooo");
        res.send(JSON,stringify(result));
+       res.write(JSON.stringify(result));
            /*
        if (err) {          
            res.status(500).send(err,tostring()); 
