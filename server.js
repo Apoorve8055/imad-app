@@ -14,9 +14,11 @@ var app = express();
 app.use(morgan('combined'));
 
 var pool = new Pool(con);
+
 app.get('/test-db',function(req,res)
 {   
-    res.send("test");
+    
+    res.send(pool);
 });
 
 
