@@ -104,6 +104,7 @@ app.get('/artical-2',function(req,res){
     });
 });
 */
+///////////////////////////////////////// featching data from artical tabele/////////////////////////////
 app.get('/:articleName', function (req, res) {
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
   pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
