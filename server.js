@@ -89,7 +89,7 @@ function createTemplate (data) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
-app.get('/artical-one', function (req, res) {
+/*app.get('/artical-one', function (req, res) {
  // res.sendFile(path.join(__dirname,'ui','artical-one.html'));
   res.send(createTemplate(articalOne));
 });
@@ -103,7 +103,7 @@ app.get('/artical-2',function(req,res){
         }
     });
 });
-
+*/
 app.get('/articles/:articleName', function (req, res) {
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
   pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
