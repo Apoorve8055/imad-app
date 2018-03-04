@@ -44,17 +44,7 @@ app.get('/test-db',function(req,res){
         }
     });
 });
-//////////////////////////////////////////////////////////////////////////////////////
-app.get('/artical-1',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','artical-one.html'));
-});
 ///////////////////////////////////// BODY ///////////////////////////////////////////
-var articalOne = {
-    title:'Artical-One | Apoorve',
-    heading:'this is Artical-One',
-    content:`<h3>hlw every one this artical one....</h3>
-    <p>this is my new artical page using js </p> `
-};
 
 function createTemplate (data) {
     var title = data.title;
@@ -87,23 +77,6 @@ function createTemplate (data) {
     </html>`
     return htmlTemplate;
 }
-
-/////////////////////////////////////////////////////////////////////////////////////
-/*app.get('/artical-one', function (req, res) {
- // res.sendFile(path.join(__dirname,'ui','artical-one.html'));
-  res.send(createTemplate(articalOne));
-});
-
-app.get('/artical-2',function(req,res){
-    pool.query('SELECT * FROM article',function(err,result){
-        if(err){
-            res.status(500).send(err.tostring());
-        }else{
-            res.send(JSON.stringify(result.rows));
-        }
-    });
-});
-*/
 ///////////////////////////////////////// featching data from artical tabele/////////////////////////////
 app.get('/:articleName', function (req, res) {
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
