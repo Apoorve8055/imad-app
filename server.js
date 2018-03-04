@@ -95,9 +95,14 @@ app.get('/artical-one', function (req, res) {
 });
 
 app.get('/artical-2',function(req,res){
-     res.send(createTemplate(articalOne));
+     //res.send(createTemplate(articalOne));
     //res.sendFile(path.join(__dirname,'ui','artical-one.html'));
+pool.query('SELECT * FROM test',function(req,result){
+    res.send(JSON.stringify(reslut.rows));
 });
+});
+
+
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
 app.listen(port, function () {
