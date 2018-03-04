@@ -95,7 +95,7 @@ app.get('/artical-one', function (req, res) {
 });
 
 app.get('/artical-2',function(req,res){
-    pool.query('SELECT * FROM artical',function(err,result){
+    pool.query('SELECT * FROM article',function(err,result){
         if(err){
             res.status(500).send(err.tostring());
         }else{
