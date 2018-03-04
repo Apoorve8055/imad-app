@@ -56,42 +56,7 @@ var articalOne = {
     <p>this is my new artical page using js </p> `
 };
 
-function creattemp(data)
-{   
-    var title = data.title;
-    var heading = data.heading;
-    var content = data.content;
-    var htmltemp = `
- <html>
-      <head>
-          <title>
-              ${title}
-          </title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link href="/ui/style.css" rel="stylesheet" />
-      </head> 
-      <body>
-          <div class="container">
-              <div>
-                  <a href="/">Home</a>
-              </div>
-              <hr/>
-              <h3>
-                  ${heading}
-              </h3>
-              <div>
-                ${content}
-              </div>
-          </div>
-      </body>
-    </html>
-    `;
-    return creattemp;
-}
-/////////////////////////////////////////////////////////////////////////////////////
-app.gt('/articl-one',function(req,res){
-    res.sendFile(creattemp(articalOne));
-});
+
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
 app.listen(port, function () {
