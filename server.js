@@ -91,8 +91,8 @@ function createTemplate (data) {
 
 /////////////////////////////////////////////////////////////////////////////////////
 app.get('/articl-one', function (req, res) {
-  res.sendFile(path.join(__dirname,'ui','artical-one.html'));
-  //res.send(createTemplate(articalOne));
+ // res.sendFile(path.join(__dirname,'ui','artical-one.html'));
+  res.send(createTemplate(articalOne));
 });
 
 //////////////////////////////////////////////////////////////////////////////////////
