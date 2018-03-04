@@ -95,7 +95,8 @@ app.get('/articl-one', function (req, res) {
 });
 
 app.get('/artical-2',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','artical-one.html'));
+     res.send(createTemplate(articalOne));
+    //res.sendFile(path.join(__dirname,'ui','artical-one.html'));
 });
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
