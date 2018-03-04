@@ -95,14 +95,14 @@ app.get('/artical-one', function (req, res) {
 });
 
 app.get('/artical-2',function(req,res){
-     //res.send(createTemplate(articalOne));
-    //res.sendFile(path.join(__dirname,'ui','artical-one.html'));
-pool.query('SELECT * FROM test',function(req,result){
-    res.send(JSON.stringify(reslut.rows));
+    pool.query('SELECT * FROM test',function(err,result){
+        if(err){
+            res.status(500).send(err.tostring());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
 });
-});
-
-
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
 app.listen(port, function () {
