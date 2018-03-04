@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var config = {
-       user: 'vapoorve',
+    user: 'vapoorve',
     database: 'vapoorve',
     host: 'db.imad.hasura-app.io',
     port: '5432',
@@ -32,6 +32,16 @@ app.get('/ui/madi.png', function (req, res) {
 //////////////////////////////////////////////////////////////////////////////////////
 app.get('/test',function(req,res){
     res.send("this is test parameteros");
+});
+var pool = new Pool(config);
+app.get('/tst-db',function(req,res){
+    pool.query('SELECT * FROM test',function(req,result){
+        if(err){
+            res.status(500).send(err.tostring());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
 });
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
