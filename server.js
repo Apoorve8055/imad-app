@@ -95,6 +95,9 @@ app.get('/articl-one', function (req, res) {
   res.send(createTemplate(articalOne));
 });
 
+app.get('/artical-2',function(req,res){
+    res.sendFile(path.join(__dirname,'ui','artical-one.html'));
+});
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
 app.listen(port, function () {
