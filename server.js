@@ -29,10 +29,11 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// test parameter /////////////////////////////////////////////////
 app.get('/test',function(req,res){
     res.send("this is test parameteros");
 });
+////////////////////////////// test - db //////////////////////////////////////////
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
     pool.query('SELECT * FROM test',function(err,result){
@@ -42,6 +43,10 @@ app.get('/test-db',function(req,res){
             res.send(JSON.stringify(result.rows));
         }
     });
+});
+//////////////////////////////////////////////////////////////////////////////////////
+app.get('/artical-one',function(req,res){
+    res.sendFile(path.join(__dirname,'ui','artical.html'));
 });
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
