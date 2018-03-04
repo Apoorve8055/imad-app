@@ -29,7 +29,11 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+app.get('/test',function(req,res){
+    res.send("this is test parameteros");
+});
+//////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
