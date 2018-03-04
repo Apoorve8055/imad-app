@@ -56,11 +56,11 @@ var articalOne = {
     <p>this is my new artical page using js </p> `
 };
 
-function creattemp(data)
-{   
+function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
     var content = data.content;
+    
     var htmlTemplate = `
     <html>
       <head>
@@ -80,9 +80,6 @@ function creattemp(data)
                   ${heading}
               </h3>
               <div>
-                  ${date}
-              </div>
-              <div>
                 ${content}
               </div>
           </div>
@@ -91,10 +88,12 @@ function creattemp(data)
     `;
     return htmlTemplate;
 }
+
 /////////////////////////////////////////////////////////////////////////////////////
-app.gt('/articl-one',function(req,res){
-    res.sendFile(creattemp(articalOne));
+app.get('/articl-one', function (req, res) {
+  res.send(createTemplate(articalOne));
 });
+
 //////////////////////////////////////////////////////////////////////////////////////
 var port = 80;
 app.listen(port, function () {
