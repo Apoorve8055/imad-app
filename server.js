@@ -34,8 +34,8 @@ app.get('/test',function(req,res){
     res.send("this is test parameteros");
 });
 var pool = new Pool(config);
-app.get('/tst-db',function(req,res){
-    pool.query('SELECT * FROM test',function(req,result){
+app.get('/test-db',function(req,res){
+    pool.query('SELECT * FROM test',function(err,result){
         if(err){
             res.status(500).send(err.tostring());
         }else{
