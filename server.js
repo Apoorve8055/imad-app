@@ -100,7 +100,7 @@ app.get('/:articleName', function (req, res) {
 function hash(input,salt)
 {
     var hashed = crypto.pbkdf2Sync('input', 'salt', 1000, 512, 'sha512');
-    return hashed.tostring('hex');
+    return hashed.toString('hex');
 }
 app.get('/hash/:input',function(req,res){
     var hashedstring  = hash(req.params.input,"this is Apoorve");
