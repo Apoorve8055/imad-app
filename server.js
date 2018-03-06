@@ -99,7 +99,7 @@ app.get('/:articleName', function (req, res) {
 //////////////////////////////////////// Incrption (hash) ////////////////////////////
 function hash(input,salt)
 {
-    var hashed = crypto.pbkdf2Sync('input', 'salt', 1000, 512, 'sha512');
+    var hashed = crypto.pbkdf2Sync('input', 'salt', 1000, 1, 'sha512');
     return hashed.toString('hex');
 }
 app.get('/hash/:input',function(req,res){
