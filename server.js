@@ -126,19 +126,18 @@ app.post('/login',function(req,res){
         if (result.rows.length === 0) {
             res.status(40).send('username && password are invalid....');
         }
-        else 
-        {
-            var dbstring = result.rows[1].pass;
+        else {
+            var dbstring = result.rows[0].pass;
             var salt = dbstring.split('$')[2];
             var hashedpassword = hash(pass,salt);
             if(hashedpassword == dbstring)
-                {
-                    res.send("Succesful Login....");    
-                }
-            else
-                {    
-                    res.status(40).send('username && password are invalid....');
-                }
+            {
+            res.send("Succesful Login....");    
+            }
+            else{    
+                res.status(40).send('username && password are invalid....');
+        }
+            
         }
     }
   });
