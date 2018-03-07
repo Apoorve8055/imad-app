@@ -27,6 +27,6 @@ submit.onclick = function () {
     console.log(username);
     console.log(password);
     request.open('POST', 'http://vapoorve.imad.hasura-app.io/login', true);
-    request.send(JSON.strinfigy({username: username, pass: password}));  
+    request.send(JSON.strinfify({username: username, pass: password}));  
 
 };
