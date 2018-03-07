@@ -78,7 +78,7 @@ function createTemplate (data) {
               </div>
           </div>
       </body>
-    </html>`;
+    </html>`
     return htmlTemplate;
 }
 ///////////////////////////////////////// featching data from artical tabele/////////////////////////////
