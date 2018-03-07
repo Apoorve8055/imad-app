@@ -1,6 +1,6 @@
 
 // Submit username/password to login
-var submit = document.getElementById('sub');
+var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
   
     // Create a request object
@@ -22,8 +22,8 @@ submit.onclick = function () {
     };
     
     // Make the request
-    var username = document.getElementById('user').value;
-    var password = document.getElementById('pass').value;
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
     console.log(username);
     console.log(password);
     request.open('POST', 'http://coco98.imad.hasura-app.io/login', true);
