@@ -127,7 +127,7 @@ app.post('/login',function(req,res){
             res.status(40).send('username && password are invalid....');
         }
         else {
-            var dbstring = result.rows[0].pass;
+            var dbstring = result.rows[1].pass;
             var salt = dbstring.split('$')[2];
             var hashedpassword = hash(pass,salt);
             if(hashedpassword == dbstring)
