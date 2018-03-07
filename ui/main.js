@@ -21,7 +21,7 @@ submit.onclick = function () {
       } 
       else
           {
-              alert("erroe");
+              alert(request.readyState);
               
           }
       // Not done yet
