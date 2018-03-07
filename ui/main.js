@@ -1,5 +1,10 @@
 // Submit username/password to login
 var submit = document.getElementById('sub');
+
+submit.onclick = function () {
+  alert("yoooooooooo");
+    };
+/*    
 submit.onclick = function () {
   
     // Create a request object
@@ -28,4 +33,4 @@ submit.onclick = function () {
     request.open('POST', 'http://coco98.imad.hasura-app.io/login', true);
     request.send(JSON.strinfigy({username: username, password: password}));  
 
-};
+};*/
