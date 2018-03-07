@@ -82,7 +82,7 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 ///////////////////////////////////////// featching data from artical tabele/////////////////////////////
-app.get('/:articleName', function (req, res) {
+/*app.get('/:articleName', function (req, res) {
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
   pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
     if (err) {
@@ -98,7 +98,7 @@ app.get('/:articleName', function (req, res) {
     }
   });
 });
-
+*/
 app.post('/creat-user',function(req,res){
     var username = req.body.username;
     var pass = req.body.pass;
