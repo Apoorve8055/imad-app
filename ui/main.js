@@ -21,7 +21,7 @@ submit.onclick = function () {
       } 
       else
           {
-              alert(XMLHttpRequest.DON);
+              alert("erroe");
               
           }
       // Not done yet
