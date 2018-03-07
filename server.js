@@ -99,6 +99,7 @@ function createTemplate (data) {
   });
 });
 */
+///////////////////////////////////////// Creat user //////////////////////////////////
 app.post('/creat-user',function(req,res){
     var username = req.body.username;
     var pass = req.body.pass;
@@ -111,6 +112,33 @@ app.post('/creat-user',function(req,res){
         
        res.send("user succesfull created....."+username);
         }
+  });
+});
+//////////////////////////////////////// login ///////////////////////////////////////
+app.post('/login',function(req,res){
+    var username = req.body.username;
+    var pass = req.body.pass;
+    pool.query('SELECT * FROM "user" WHERE username = $1 ', [username], function (err, result) {
+    if (err) {
+        res.status(500).send(err.toString());
+    } else {
+        
+        if (result.rows.length === 0) {
+            res.status(40).send('username && password are invalid....');
+        } else {
+            var dbstring = result.rows[0].password;
+            var salt = dbstring.split('$')[2];
+            var hashedpassword = hash(pass,salt);
+            if(hashedpassword == dbstring)
+            {
+            res.send("Succesful Login....");    
+            }
+            else{    
+                res.status(40).send('username && password are invalid....');
+        }
+            
+        }
+    }
   });
 });
 //////////////////////////////////////// Incrption (hash) ////////////////////////////
