@@ -16,7 +16,8 @@ submit.onclick = function () {
               alert('Username/password is incorrect');
           } else if (request.status === 500) {
               alert('Something went wrong on the server');
-          }
+          }else
+          {alert("erroe");}
       }  
       // Not done yet
     };
