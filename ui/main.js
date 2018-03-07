@@ -1,6 +1,6 @@
+
 // Submit username/password to login
 var submit = document.getElementById('sub');
-
 submit.onclick = function () {
   
     // Create a request object
@@ -8,8 +8,7 @@ submit.onclick = function () {
     
     // Capture the response and store it in a variable
     request.onreadystatechange = function () {
-      if (1) 
-      {
+      if (request.readyState === XMLHttpRequest.DONE) {
           // Take some action
           if (request.status === 200) {
               alert('Logged in successfully');
@@ -18,12 +17,7 @@ submit.onclick = function () {
           } else if (request.status === 500) {
               alert('Something went wrong on the server');
           }
-      } 
-      else
-          {
-              alert("erroe");
-              
-          }
+      }  
       // Not done yet
     };
     
