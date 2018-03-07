@@ -21,7 +21,7 @@ submit.onclick = function () {
       } 
       else
           {
-              alert(request.readyState);
+              alert(XMLHttpRequest.DON);
               
           }
       // Not done yet
