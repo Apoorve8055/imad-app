@@ -131,7 +131,7 @@ app.post('/login',function(req,res){
             var dbstring = result.rows[1].pass;
             var salt = dbstring.split('$')[2];
             var hashedpassword = hash(pass,salt);
-            if(hashedpassword === dbstring)
+            if(hashedpassword == dbstring)
                 {
                     res.send("Succesful Login....");    
                 }
