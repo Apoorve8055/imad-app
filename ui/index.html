@@ -2,29 +2,33 @@
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+    </head>
     <body>
-        <div class="center">
-            <img id="pic" src="/ui/madi.png" class="img-medium"/>
+        <div class="container">
+            <div class="center">
+                <img id='madi' src="ui/madi.png" class="img-medium"/>
+            </div>
+            <h3>Personal</h3>
+            <div>
+                Hi. My name is Tanmai Gopal
+            </div>
+            <hr/>
+            <h3>Professional</h3>
+            <div>
+                I work at Hasura
+            </div>
+            <hr/>
+            <h3>Login to unlock awesome features</h3>
+            <div>
+                <input type="text" id="username" placeholder="username" />
+                <input type="password" id="password" />
+                <input type="submit" id="submit_btn" />
+            </div>
+            <hr/>
+            <div class="footer">
+            </div>
         </div>
-        <br>
-        <div id="data" class="center text-big bold">
-            Login Apoorve's Wabapp 
-        </div>
-        <div>
-            <br>
-            <table align="center" action="" methode="POST">
-                 <tr>
-                      <td><input type="text" id="user" placeholder="enter username" class="center text-big bold" /> <br></td> </tr>
-                <tr>
-                      <td><input type="password" id="pass" placeholder="enter password" class="center text-big bold" /><br></td>
-                <tr align="center">
-                       <td ><input type="submit" align="center" id="sub" class="center text-big bold" /></td> 
-                </tr>
-            </table>
-        </div>
-        <script type="text/javascript" src="ui/main.js">
+        <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
 </html>
